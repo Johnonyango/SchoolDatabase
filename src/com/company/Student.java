@@ -2,7 +2,6 @@ package com.company;
 
 
 public class Student {
-    private String registrationNo;
     private String name;
     private int english;
     private int maths;

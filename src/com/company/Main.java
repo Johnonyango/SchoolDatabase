@@ -51,7 +51,6 @@ public class Main {
         }else if (n == 'B') {
             List<Teachers> teacher=new ArrayList<>();
             Scanner input = new Scanner(System.in);
-            int english, maths;
             String studentName;
         }
 
