@@ -1,10 +1,8 @@
 package com.company;
 
-import java.util.*;
-
 public class Teachers {
     private String name;
-    private int id;
+    private String id;
 
 
     public String getName() {
@@ -14,4 +12,12 @@ public class Teachers {
     public void setName(String name) {
         this.name = name;
     }
+    public String getId() {
+        return id;
+    }
+
+    public void setId(int Id) {
+        this.id = name;
+    }
+
 }
