@@ -2,7 +2,9 @@ package com.company;
 
 public class Teachers {
     private String name;
-    private String id;
+    private int id;
+    private String subject;
+
 
 
     public String getName() {
@@ -12,16 +14,23 @@ public class Teachers {
     public void setName(String name) {
         this.name = name;
     }
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(int Id) {
-        this.id = name;
+    public void setId(int id) {
+        this.id = id;
+    }
+    public int getSubject() {
+        return id;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
     @Override
     public String toString() {
-        return "[" + this.id + ", " + this.name + "]";
+        return "[" + this.id + ", " + this.name + this.subject + "]";
     }
 
 }

@@ -6,13 +6,13 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println("You want to view teacher or student? A.student  B.Teacher");
-        Scanner sc=new Scanner(System.in);//get user answer, the answer is case sensitive
+        System.out.print("You want to view teacher or student? A.student  B.Teacher");
+        Scanner sc=new Scanner(System.in);//Gets either the teacher or student input, case sensitive
         char n= sc.next().charAt(0);
         if (n == 'A') {
 
-            //Manage a list of students
-            List<Student> studentList = new ArrayList<Student>();
+            //Managing a list of students
+            List<Student> studentList = new ArrayList<>();
             Scanner input = new Scanner(System.in);
             int english, maths;
             String studentName;
@@ -48,10 +48,24 @@ public class Main {
             Student higherStudent = Collections.max(studentList, Comparator.comparing(c -> c.getAverage()));
 
             System.out.println("Highest average score :" + higherStudent.getAverage() + "\n Student with the highest score is: " + higherStudent.getName());
-        }else if (n == 'B') {
-            List<Teachers> teacher=new ArrayList<>();
-            Scanner input = new Scanner(System.in);
-            String studentName;
+        }
+        else if (n == 'B') {
+
+//            Managing the teachers' list
+            Collection<Teachers> teachers = new LinkedList<>();
+            Scanner scanner = new Scanner(System.in);
+            int numberOfTeachers = 5;
+            while(numberOfTeachers > 0){
+                Teachers teacher = new Teachers();
+                System.out.println("Enter teacher's name: ");
+                teacher.setId(scanner.nextLine());
+                System.out.println("Enter teacher's id: ");
+                teacher.setSubject(scanner.nextLine());
+                System.out.println("Enter Subject: ");
+                teacher.setName(scanner.nextLine());
+                teachers.add((Teachers) teachers);
+                numberOfTeachers --;
+            }
         }
 
     }
