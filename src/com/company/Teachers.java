@@ -19,5 +19,9 @@ public class Teachers {
     public void setId(int Id) {
         this.id = name;
     }
+    @Override
+    public String toString() {
+        return "[" + this.id + ", " + this.name + "]";
+    }
 
 }
