@@ -1,5 +1,6 @@
 package com.company;
 
+import java.sql.SQLException;
 import java.util.*;
 
 public class Teachers {
@@ -30,15 +31,9 @@ public class Teachers {
         return this.getId()+" "+this.getName();
     }
 
-//    @Override
-    public void add() {
-        Teachers teachers=new Teachers();
-        System.out.println("Teacher's ID: ");
-        teachers.setId(scanner.nextInt());
-        System.out.println("Teacher's name: ");
-        teachers.settName(scanner.nextLine());
-        teacher.add(teachers);
-        teachers.assignSubject();
+    //    @Override
+    public void add() throws SQLException, ClassNotFoundException {
+        TeacherDB.getTeachersData();
     }
 
     public void assignSubject(){
