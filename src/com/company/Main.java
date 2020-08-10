@@ -1,52 +1,21 @@
 package com.company;
 
-import java.util.*;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws SQLException, ClassNotFoundException {
         System.out.println("You want to view teacher or student? \nA.student  \nB.Teacher ");
         Scanner sc=new Scanner(System.in);//Gets either the teacher or student input.
         char n= sc.next().charAt(0);
         if (n == 'A') {
 
             //Managing a list of students
-            List<Student> studentList = new ArrayList<>();
-            Scanner input = new Scanner(System.in);
-            int english, maths;
-            String studentName;
-            int choice;
-            do {
-                Student student = new Student();
-
-                System.out.println("student name: ");
-                studentName = input.next();
-                student.setName(studentName);
-
-                System.out.println("first grade: ");//Integers only
-                english = input.nextInt();
-                student.setGrade1(english);
-
-                System.out.println("second grade: ");//Integers only
-                maths = input.nextInt();
-                student.setGrade2(maths);
-
-
-                System.out.print(" 1. Continue?     2. Quit ");
-                choice = input.nextInt();
-
-                student.setAverage(student.calculateAverage());
-
-                studentList.add(student);
-
-            }
-            while (choice != 2);
-
-            //Get student object with the higher average
-            Student higherStudent = Collections.max(studentList, Comparator.comparing(c -> c.getAverage()));
-
-            System.out.println("Highest average score :" + higherStudent.getAverage() + "\n Student with the highest score is: " + higherStudent.getName()+ "with"+higherStudent.calculateAverage());
+            List<com.john.Student> studentList = new ArrayList<>();
+            com.john.StudentDB.getStudentData();
         }
         else if (n == 'B') {
 
@@ -61,13 +30,13 @@ public class Main {
             Scanner scanner = new Scanner(System.in);
             int num = scanner.nextInt();
             if (num == 1)
-                teachers.add();
+                TeacherDB.getTeachersData();
             else if ((num == 2) && (num ==5))
                 teachers.view();
             else if (num == 3)
                 teachers.delete();
             else if (num == 4)
                 teachers.assignSubject();
-            }
+        }
     }
 }
