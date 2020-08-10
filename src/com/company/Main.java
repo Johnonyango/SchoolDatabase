@@ -33,8 +33,7 @@ public class Main {
                 student.setGrade2(maths);
 
 
-                System.out.println(" Add more students? Enter 1 or 2 ");
-                System.out.print(" 1. YES     2. NO ");
+                System.out.print(" 1. Continue?     2. Quit ");
                 choice = input.nextInt();
 
                 student.setAverage(student.calculateAverage());
@@ -47,7 +46,7 @@ public class Main {
             //Get student object with the higher average
             Student higherStudent = Collections.max(studentList, Comparator.comparing(c -> c.getAverage()));
 
-            System.out.println("Highest average score :" + higherStudent.getAverage() + "\n Student with the highest score is: " + higherStudent.getName());
+            System.out.println("Highest average score :" + higherStudent.getAverage() + "\n Student with the highest score is: " + higherStudent.getName()+ "with"+higherStudent.calculateAverage());
         }
         else if (n == 'B') {
 
@@ -57,15 +56,18 @@ public class Main {
                     "1. Add \n" +
                     "2. View \n" +
                     "3. Delete \n" +
-                    "4. Back");
+                    "4. Assign Subject\n" +
+                    "5. Back");
             Scanner scanner = new Scanner(System.in);
             int num = scanner.nextInt();
             if (num == 1)
                 teachers.add();
-            else if ((num == 2) && (num ==4))
+            else if ((num == 2) && (num ==5))
                 teachers.view();
             else if (num == 3)
                 teachers.delete();
+            else if (num == 4)
+                teachers.assignSubject();
             }
     }
 }
